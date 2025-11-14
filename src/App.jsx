@@ -1,14 +1,14 @@
 import React from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Basic from "./Companents/Basic"
+import All from './Companents/all';
 
 
 
 function App() {
   return (
     <>
-    <div>
-    <Basic/>
+    <div className=''>
+  <All/>
       </div>
       </>
   )
