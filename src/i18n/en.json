@@ -22,11 +22,11 @@
     "whyDescription": "With over 15 years of experience  in the IT industry, we've established <0/> ourselves as a trusted partner for businesses seeking innovative solutions. <0/> Our team of experts brings together diverse skills and perspectives to tackle <0/> even the most complex challenges.",
     "features": [
       {
-        "title": "Effective project  <br />  management",
-        "body": "Full support of projects using  <br />  modern methodologies and proven practices."
+        "title": "Effective project  management",
+        "body": "Full support of projects using modern methodologies and proven practices."
       },
       {
-        "title": "Cross-platform and  <br />  responsive design",
+        "title": "Cross-platform and  <br /> responsive design",
         "body": "We create designs that look  <br />  flawless on any device."
       },
       {
@@ -42,7 +42,7 @@
 
   "servicesSection": {
     "badge": "Services",
-    "description": "At FixFlow, we take pride in delivering top-quality plumbing services designed to keep your home or business running.",
+    "description": "Providing strategic and effective legal solutions for you",
     "cards": [
       {
         "title": "Software development",

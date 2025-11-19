@@ -118,49 +118,49 @@ function all() {
     const cardsData = [
         {
             title: "Карточка 1",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.0.title"),
             cardText: t("servicesSection.cards.0.body"),
         },
         {
             title: "Карточка 2",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.1.title"),
             cardText: t("servicesSection.cards.1.body"),
         },
         {
             title: "Карточка 3",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.2.title"),
             cardText: t("servicesSection.cards.2.body"),
         },
         {
             title: "Карточка 4",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.3.title"),
             cardText: t("servicesSection.cards.3.body"),
         },
         {
             title: "Карточка 5",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.4.title"),
             cardText: t("servicesSection.cards.4.body"),
         },
         {
             title: "Карточка 6",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.5.title"),
             cardText: t("servicesSection.cards.5.body"),
         },
         {
             title: "Карточка 7",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.6.title"),
             cardText: t("servicesSection.cards.6.body"),
         },
         {
             title: "Карточка 8",
-            icon: "gear",
+            icon: "/logo/Group.png",
             description: t("servicesSection.cards.7.title"),
             cardText: t("servicesSection.cards.7.body"),
         },
@@ -177,7 +177,7 @@ function all() {
 
                         <div className="flex  gap-[58px] items-center">
                             <div className="flex md:gap-[40px] xl:gap-[56px] text-white items-center hidden lg:flex">
-                                <button className="cursor-pointer text-[18px]">{t("navbar.home")} </button>
+                                <button onClick={() => scrollToSection(homeRef)} className="cursor-pointer text-[18px]">{t("navbar.home")} </button>
                                 <button onClick={() => scrollToSection(aboutRef)} className="cursor-pointer text-[18px]">{t("navbar.about")}</button>
                                 <button onClick={() => scrollToSection(servicesRef)} className="cursor-pointer text-[18px]">{t("navbar.services")}</button>
                                 <button onClick={() => scrollToSection(portfolioRef)} className="cursor-pointer text-[18px]">{t("navbar.portfolio")}</button>
@@ -211,8 +211,8 @@ function all() {
 
                 <section id="hero" ref={homeRef} className="flex items-center text-white h-screen pt-[100px] max-w-[1440px] mx-auto px-[20px] md:px-2 lg:px-3 2xl:px-0">
                     <div className="space-y-6">
-                        <h1 className="text-6xl font-semibold">  <Trans i18nKey="hero.title" /> </h1>
-                        <p className="text-[25px]"> <Trans i18nKey="hero.description" /> </p>
+                        <h1 className="text-5xl md:text-6xl  font-semibold">  <Trans i18nKey="hero.title" /> </h1>
+                        <p className="text-[20px] md:text-[25px]"> <Trans i18nKey="hero.description" /> </p>
                         <button className="bg-[#0349A7] text-white w-[147px] h-[52px] rounded-xl text-lg">{t("hero.cta")}</button>
                     </div>
                 </section>
@@ -228,8 +228,8 @@ function all() {
                 <section ref={aboutRef} id="AboutUs" className=" bg-gradient-to-b from-[#0348A408] to-white flex">
                     <div className="max-w-[1440px]  mx-auto space-y-[40px] md:space-y-[120px] my-[80px] px-[20px] md:px-2 lg:px-3 2xl:px-0">
                         <div className="space-y-4 items-center justify-center flex flex-col text-center">
-                            <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[202px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                                <i className="bi bi-buildings text-2xl"></i>
+                            <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
+                                <img src="/logo/aboutUs.png" className="w-[20px]" />
                                 <h1 className="text-2xl"> {t("aboutSection.badge")}</h1>
                             </button>
                             <h1 className=" font-semibold text-[28px] md:text-4xl w-[335px] md:w-[560px]">{t("aboutSection.title")}</h1>
@@ -254,7 +254,7 @@ function all() {
 
                                     <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left">
                                         <div className="bg-[#FBBF0A] w-[70px] h-[70px] flex items-center justify-center rounded-full">
-                                            <i className="bi bi-phone text-white w-[32px] h-[27px]"></i>
+                                            <img src="/logo/services.png" className="w-[32px] h-[27px]" />
                                         </div>
                                         <div className="space-y-[8px]  w-[260px]">
                                             <h1 className="font-medium text-xl">
@@ -268,7 +268,8 @@ function all() {
 
                                     <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left  w-[271px]">
                                         <div className="bg-[#3BCEAC] w-[70px] h-[70px] flex items-center justify-center rounded-full">
-                                            <i className="bi bi-phone text-white"></i>
+                                            <img src="/logo/services4.png" className="w-[32px] h-[27px]" />
+
                                         </div>
                                         <div className="space-y-[8px]">
                                             <h1 className="font-medium text-xl">
@@ -286,7 +287,7 @@ function all() {
 
                                     <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left  w-[271px]">
                                         <div className="bg-[#43A7FC] w-[70px] h-[70px] flex items-center justify-center rounded-full">
-                                            <i className="bi bi-phone text-white"></i>
+                                            <img src="/logo/services2.png" className="w-[32px] h-[27px]" />
                                         </div>
                                         <div className="space-y-[8px]">
                                             <h1 className="font-medium text-xl">
@@ -304,7 +305,7 @@ function all() {
 
                                     <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left  w-[271px]">
                                         <div className="bg-[#D1345B] w-[70px] h-[70px] flex items-center justify-center rounded-full">
-                                            <i className="bi bi-phone text-white"></i>
+                                            <img src="/logo/services3.png" className="w-[32px] h-[27px]" />
                                         </div>
                                         <div className="space-y-[8px]">
                                             <h1 className="font-medium text-xl">
@@ -330,17 +331,17 @@ function all() {
                 <section ref={servicesRef} id="Services" className=" max-w-[1440px] mx-auto flex flex-col items-center justify-center space-y-[70px] my-[20px] ">
                     <div className="space-y-4 items-center justify-center flex flex-col text-center">
                         <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[202px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                            <i className="bi bi-buildings text-2xl"></i>
+                            <i className="bi bi-gear text-2xl"></i>
                             <h1 className="text-2xl">{t("servicesSection.badge")}</h1>
                         </button>
-                        <p className="text-[16px] md:text-xl w-[335px] md:w-[710px]">{t("servicesSection.description")} </p>
+                        <p className="font-semibold text-[28px] md:text-4xl w-[335px] md:w-[560px]">{t("servicesSection.description")} </p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 2xl:grid-cols-4 gap-4">
                         {cardsData.map((card, index) => (
                             <div key={index} className="relative flex flex-col h-[160px] w-[345px] md:h-[285px] p-[16px] md:p-6 rounded-2xl border border-white shadow-xl shadow-gray-200   space-y-1 hover:bg-[#F3F8FF]">
                                 <div className="flex gap-4 items-center">
                                     <span className="flex items-center shrink-0 justify-center w-[60px] h-[60px] rounded-full bg-[#0349A7]">
-                                        <i className={`bi bi-${card.icon} text-white text-[32px]`}></i>
+                                        <img src={card.icon} className="w-[34px]" />
                                     </span>
                                     <div className=" font-semibold text-[20px]  text-[#1B2845] block lg:hidden">{card.description}</div>
                                 </div>
@@ -355,7 +356,7 @@ function all() {
                 <section ref={portfolioRef} id="Porfolio" className=" bg-gradient-to-b from-[#0348A408] to-white   flex items-center">
                     <div className=" max-w-[1440px] mx-auto flex flex-col items-center justify-center my-[20px] md:my-[70px] space-y-2 md:space-y-4 px-[20px] md:px-2 lg:px-3 2xl:px-0">
                         <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[202px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                            <i className="bi bi-buildings text-2xl"></i>
+                            <img src="/logo/uil.png" className="w-[20px]" />
                             <h1 className="text-2xl">{t("portfolioSection.badge")}</h1>
                         </button>
                         <h1 className="font-semibold text-[24px] md:text-4xl  text-center  md:w-[440px]">{t("portfolioSection.title")}</h1>
@@ -410,31 +411,75 @@ function all() {
 
                 <section ref={certificatesRef} id="Certificats" className="max-w-[1440px] mx-auto flex flex-col items-center justify-center space-y-3.5 md:space-y-5 my-[70px] px-[20px] md:px-2 lg:px-3 2xl:px-0">
                     <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[202px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                        <i className="bi bi-buildings text-2xl"></i>
+                        <img src="/logo/phcertificate.png" className="w-[20px]" />
                         <h1 className="text-2xl">{t("certificateSection.badge")}</h1>
                     </button>
                     <h1 className=" font-bold text-[24px] md:text-4xl text-center">{t("certificateSection.title")}</h1>
                     <p className="text-center text-[16px] md:text-xl w-[295px] md:w-[690px] ">{t("certificateSection.description")}</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] md:w-[467px] md:h-[370px]  hover:bg-[#F8FBFF]">
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[467px] xl:h-[370px]  hover:bg-[#F8FBFF]">
                             <div className="space-y-[20px] md:space-y-5">
                                 <div className=" flex justify-between">
-                                    <div className=" bg-[#e0ecfb] w-[50px] md:w-[70px] h-[50px]  md:h-[70px] flex items-center justify-center rounded-xl ">
+                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
                                         <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
                                     </div>
-                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] md:w-[67px] h-[28px] md:h-[35px]">{t("certificateSection.cards.0.year")}</div>
+                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
                                 </div>
                                 <div>
-                                    <h1 className="font-medium text-[20px] md:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
-                                    <p className=" text-[16px] md:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
+                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
+                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
                                 </div>
-                                <p className=" font-dmsans font-light italic text-[16px] md:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
+                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
                                 <div className="flex gap-2.5">
                                     <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
-                                    <p className="text-[#8D8D8D] text-[16px] md:text-xl">{t("certificateSection.cards.0.status")}</p>
+                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
                                 </div>
                             </div>
                         </div>
+
+                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[467px] xl:h-[370px]  hover:bg-[#F8FBFF]">
+                            <div className="space-y-[20px] md:space-y-5">
+                                <div className=" flex justify-between">
+                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
+                                        <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
+                                </div>
+                                <div>
+                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
+                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
+                                </div>
+                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
+                                <div className="flex gap-2.5">
+                                    <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
+                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[467px] xl:h-[370px]  hover:bg-[#F8FBFF]">
+                            <div className="space-y-[20px] md:space-y-5">
+                                <div className=" flex justify-between">
+                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
+                                        <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
+                                    </div>
+                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
+                                </div>
+                                <div>
+                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
+                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
+                                </div>
+                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
+                                <div className="flex gap-2.5">
+                                    <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
+                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
                 </section>
@@ -443,7 +488,7 @@ function all() {
                     <div className="max-w-[1440px] mx-auto items-center justify-center flex flex-col space-y-7   my-[70px] px-[20px] md:px-2 lg:px-3 2xl:px-0 ">
                         <div className="space-y-2 md:space-y-4 items-center justify-center flex flex-col text-center">
                             <button className="rounded-full text-[#0349A7] font-medium bg-[#E8F2FF] flex gap-3 w-[184px] md:w-[202px] h-[50px] md:h-[55px] text-center justify-center items-center">
-                                <i className="bi bi-buildings text-2xl"></i>
+                                <img src="/logo/contact.png" className="w-[20px]" />
                                 <h1 className="text-2xl">{t("contactSection.badge")}</h1>
                             </button>
                             <h1 className="font-semibold text-[24px] md:text-4xl">{t("contactSection.title")}</h1>
