@@ -1,82 +1,106 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Draggable } from "gsap/Draggable";
+
+gsap.registerPlugin(Draggable);
 
 export default function Partners() {
-    const topSliderRef = useRef(null);
+  const trackRef = useRef(null);
+  const tl = useRef(null);
 
-    useEffect(() => {
-        const makeInfiniteSlider = (sliderRef, direction = "left") => {
-            const slider = sliderRef.current;
-            if (!slider) return;
+  const slides = [
+    { src: "/partner/energetika-vazirliki.png", w: 137, h: 40 },
+    { src: "/partner/hamkorbank.png", w: 40, h: 40 },
+    { src: "/partner/uzpotash.png", w: 179, h: 40 },
+    { src: "/partner/ungbuxoronqiz.png", w: 56, h: 40 },
+    { src: "/partner/kungradskiy.png", w: 158, h: 40 },
+    { src: "/partner/uzkimyasanoat.png", w: 64, h: 40 },
+    { src: "/partner/navoiyazot.png", w: 209, h: 40 },
+    { src: "/partner/ammofos.png", w: 58, h: 40 },
+    { src: "/partner/maxam-chirchik.png", w: 172, h: 40 },
+    { src: "/partner/fosforit.png", w: 40, h: 40 },
+  ];
 
-            const slides = Array.from(slider.querySelectorAll("img"));
-            const slideWidth = slides[0].offsetWidth + 16;
-            const totalWidth = slideWidth * slides.length;
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
 
-            slides.forEach((slide) => {
-                const clone = slide.cloneNode(true);
-                slider.appendChild(clone);
-            });
+    // SLIDES NI 3 MARTA KO'PAYTIRAMIZ – INFINITE DRAG UCHUN ENG YAXSHI YO'L
+    track.innerHTML = track.innerHTML + track.innerHTML + track.innerHTML;
 
-            gsap.set(slider, {
-                x: direction === "left" ? 0 : -totalWidth,
-            });
+    const items = Array.from(track.children);
 
-            gsap.to(slider, {
-                x: direction === "left" ? -totalWidth : 0,
-                duration: 90,
-                ease: "none",
-                repeat: -1,
-                onRepeat: () => {
-                    gsap.set(slider, {
-                        x: direction === "left" ? 0 : -totalWidth,
-                    });
-                },
-            });
-        };
+    // SLIDER UZUNLIGI
+    let totalWidth = items.reduce((acc, el) => acc + el.offsetWidth + 64, 0);
 
-        makeInfiniteSlider(topSliderRef, "left");
-    }, []);
+    // Infinite timeline → bu hech qachon o‘chmaydi
+    tl.current = gsap.timeline({ repeat: -1, paused: false })
+      .to(track, {
+        x: -totalWidth / 3,
+        duration: 30,
+        ease: "none",
+      });
 
-    const slides = [
+    // *** INFINITE DRAG ***
+    Draggable.create(track, {
+      type: "x",
+      trigger: track,
+      inertia: true,
+      onPress() {
+        tl.current.pause();
+        this.startX = gsap.getProperty(track, "x");
+      },
+      onDrag() {
+        gsap.set(track, { x: this.startX + this.x });
 
-       
-        { src: "/partner/energetika-vazirliki.png", w: "137px", h: "40px" },
-        { src: "/partner/hamkorbank.png", w: "40px", h: "40px" },
-        { src: "/partner/uzpotash.png", w: "179px", h: "40px" },
-        { src: "/partner/ungbuxoronqiz.png", w: "56px", h: "40px" },
-        { src: "/partner/kungradskiy.png", w: "158px", h: "40px" },
-        { src: "/partner/uzkimyasanoat.png", w: "64px", h: "40px" },
-        { src: "/partner/navoiyazot.png", w: "209px", h: "40px" },
-        { src: "/partner/ammofos.png", w: "58px", h: "40px" },
-        { src: "/partner/maxam-chirchik.png", w: "172px", h: "40px" },
-        { src: "/partner/fosforit.png", w: "40px", h: "40px" },
+        // ichkarida qolish uchun: (infinite wrap)
+        if (this.x < -totalWidth / 3) {
+          this.x += totalWidth / 3;
+          this.startX += totalWidth / 3;
+        }
+        if (this.x > totalWidth / 3) {
+          this.x -= totalWidth / 3;
+          this.startX -= totalWidth / 3;
+        }
+      },
+      onRelease() {
+        tl.current.play();
+      },
+      onThrowUpdate() {
+        gsap.set(track, { x: this.startX + this.x });
 
-        { src: "/partner/energetika-vazirliki.png", w: "137px", h: "40px" },
-         { src: "/partner/asiatransgas.png", w: "106px", h: "40px" },
-        { src: "/partner/unsShurtanGkm.png", w: "44px", h: "40px" },
-        { src: "/partner/nbu.png", w: "46px", h: "40px" },
-        { src: "/partner/ozbekneftegaz.png", w: "42px", h: "40px" },
-        { src: "/partner/ozbekomir.png", w: "52px", h: "40px" },
+        if (this.x < -totalWidth / 3) {
+          this.x += totalWidth / 3;
+          this.startX += totalWidth / 3;
+        }
+        if (this.x > totalWidth / 3) {
+          this.x -= totalWidth / 3;
+          this.startX -= totalWidth / 3;
+        }
+      }
+    });
 
+  }, []);
 
-    ];
-
-    return (
-        <section id="partners" className="">
-            <div className="relative overflow-hidden">
-                <div ref={topSliderRef} className="flex gap-[64px] ">
-                    {slides.map((item, i) => (
-                        <img
-                            key={i}
-                            src={item.src}
-                            style={{ width: item.w, height: item.h }}
-                            className="object-contain"
-                            alt="partner"
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section id="partners">
+      <div className="overflow-hidden w-full">
+        <div
+          ref={trackRef}
+          className="flex gap-[64px] cursor-grab active:cursor-grabbing"
+        >
+          {slides.map((item, i) => (
+            <img
+              key={i}
+              src={item.src}
+              width={item.w}
+              height={item.h}
+              className="object-contain select-none pointer-events-none"
+              draggable={false}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

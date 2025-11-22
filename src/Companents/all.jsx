@@ -171,7 +171,7 @@ function all() {
 
     return (
         <div>
-            <header className="relative bg-[url('/baground/bgHope.png')] bg-cover bg-center h-screen ">
+            <header className="relative bg-[url('/baground/Hopebg.svg')] bg-cover bg-center h-screen ">
 
                 <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  px-[20px] md:px-0  ${scrolled ? "bg-black/20 backdrop-blur-lg shadow-md" : "bg-transparent"}`}>
 
@@ -224,7 +224,7 @@ function all() {
 
             <main className=" ">
 
-                <section id="partners" className="  my-8">
+                <section id="partners" className="  my-12">
                     <Partners />
                 </section>
 
@@ -444,13 +444,13 @@ function all() {
 
                         {isOpen && (
                             <div className="fixed inset-0 bg-black/30 bg-opacity-50 flex items-center justify-center z-50">
-                                <div className="bg-white p-4 rounded-xl relative flex flex-col">
-                                    <div className="flex justify-between items-center mb-2">
+                                <div className="bg-white p-2 md:p-4 rounded-xl relative flex flex-col">
+                                    <div className="flex justify-between items-center mb-2  px-4">
                                         <h1 className="font-bold text-xl">It Park</h1>
                                         <button onClick={() => setIsOpen(false)} className="  font-bold text-2xl"> ×</button>
                                     </div>
 
-                                    <img src="/image/itpark.jpeg" className="w-full h-[200px] md:h-[400px] object-contain rounded-lg" />
+                                    <img src="/image/itpark.jpeg" className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] object-contain rounded-lg" />
                                 </div>
                             </div>
                         )}
@@ -652,10 +652,7 @@ function all() {
                         <hr className="border-t border-[#8D8D8D80]" />
                         <div className="flex flex-col justify-between md:flex-row space-y-4 md:space-y-0 text-center">
                             <p className="">{t("footer.rights")}</p>
-                            <div className="flex items-center justify-center gap-[100px] md:gap-[60px]">
-                                <p>{t("footer.terms")}</p>
-                                <p>{t("footer.privacy")}</p>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
