@@ -96,20 +96,40 @@
       }
     ]
   },
-  "certificateSection": {
-    "badge": "Сертификаты",
-    "title": "Признание в отрасли",
-    "description": "Наша приверженность совершенству подтверждена ведущими отраслевыми сертификатами и партнерствами",
-    "cards": [
-      {
-        "title": "<<TENZOR SOFT>> PE",
-        "subtitle": "IT PARK",
-        "focus": "Архитектура облачных решений",
-        "status": "Подтверждено",
-        "year": "2023"
-      }
-    ]
-  },
+  
+"certificateSection": {
+  "badge": "Сертификаты",
+  "title": "Признание в отрасли",
+  "description": "Наша приверженность совершенству подтверждена ведущими отраслевыми сертификатами и партнерствами",
+  "cards": [
+    {
+      "title": "TENZOR SOFT",
+      "subtitle": "IT PARK",
+      "focus": "Архитектура облачных решений",
+      "status": "Подтверждено",
+     "modalTitle" : "IT PRAK",
+      "year": "2023"
+    },
+    {
+      "title": "NOVA RENESSANS",
+      "subtitle": "IT PARK",
+      "focus": "Официально признана резидентом IT Park",
+      "status": "Получено",
+      "modalTitle" : "IT PRAK",
+      "year": "2025"
+    },
+    {
+      "title": "EPAM Systems",
+      "subtitle": "Frontend Certification",
+      "focus": "React, TypeScript, UI/UX",
+      "status": "Подтверждено",
+     "modalTitle" : "IT PRAK",
+      "year": "2023"
+    }
+  ]
+},
+
+
   "contactSection": {
     "badge": "Контакты",
     "title": "Давайте поговорим",
@@ -192,8 +212,8 @@
         "question": "Контакты",
         "answers": {
           "address": "г. Ташкент, Мирободский район, ул. Махтумкули",
-          "phone": "+998 (75) 556-56-56",
-          "email": "contact@techsolution.com"
+          "phone": "+998 95 460 10 10",
+          "email": "info@tenzorsoft.com"
         }
       }
     ]

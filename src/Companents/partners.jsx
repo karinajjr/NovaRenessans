@@ -5,8 +5,8 @@ import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 export default function Partners() {
-  const trackRef = useRef(null);
-  const tl = useRef(null);
+  const sliderRef = useRef(null);
+  const animationRef = useRef(null);
 
   const slides = [
     { src: "/partner/energetika-vazirliki.png", w: 137, h: 40 },
@@ -22,71 +22,63 @@ export default function Partners() {
   ];
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-    // SLIDES NI 3 MARTA KO'PAYTIRAMIZ – INFINITE DRAG UCHUN ENG YAXSHI YO'L
-    track.innerHTML = track.innerHTML + track.innerHTML + track.innerHTML;
+    // ASL CONTENTNI OLAMIZ
+    const original = slider.innerHTML;
 
-    const items = Array.from(track.children);
+    // IKKILASHTIRAMIZ
+    slider.innerHTML = original + original;
 
-    // SLIDER UZUNLIGI
-    let totalWidth = items.reduce((acc, el) => acc + el.offsetWidth + 64, 0);
+    // ASL SLIDLAR ENUMI ORQALI WIDTH HISOBLAYMIZ
+    const itemWidth = Array.from(slider.children)
+      .slice(0, slides.length)
+      .reduce((acc, el) => acc + el.offsetWidth + 64, 0); // gap = 64px
 
-    // Infinite timeline → bu hech qachon o‘chmaydi
-    tl.current = gsap.timeline({ repeat: -1, paused: false })
-      .to(track, {
-        x: -totalWidth / 3,
-        duration: 30,
-        ease: "none",
-      });
+    const wrap = gsap.utils.wrap(-itemWidth, 0);
 
-    // *** INFINITE DRAG ***
-    Draggable.create(track, {
-      type: "x",
-      trigger: track,
-      inertia: true,
-      onPress() {
-        tl.current.pause();
-        this.startX = gsap.getProperty(track, "x");
+    // AUTOPLAY INFINITE ANIM
+    animationRef.current = gsap.to(slider, {
+      x: -itemWidth,
+      duration: 60,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize((x) => wrap(x)),
       },
-      onDrag() {
-        gsap.set(track, { x: this.startX + this.x });
-
-        // ichkarida qolish uchun: (infinite wrap)
-        if (this.x < -totalWidth / 3) {
-          this.x += totalWidth / 3;
-          this.startX += totalWidth / 3;
-        }
-        if (this.x > totalWidth / 3) {
-          this.x -= totalWidth / 3;
-          this.startX -= totalWidth / 3;
-        }
-      },
-      onRelease() {
-        tl.current.play();
-      },
-      onThrowUpdate() {
-        gsap.set(track, { x: this.startX + this.x });
-
-        if (this.x < -totalWidth / 3) {
-          this.x += totalWidth / 3;
-          this.startX += totalWidth / 3;
-        }
-        if (this.x > totalWidth / 3) {
-          this.x -= totalWidth / 3;
-          this.startX -= totalWidth / 3;
-        }
-      }
     });
 
+    // DRAGGABLE
+    Draggable.create(slider, {
+      type: "x",
+      inertia: true,
+
+      onPress() {
+        animationRef.current.pause();
+      },
+
+      onDrag() {
+        const x = this.x;
+        gsap.set(slider, { x: wrap(x) });
+      },
+
+      onRelease() {
+        animationRef.current.play();
+      },
+
+      onThrowUpdate() {
+        const x = this.x;
+        gsap.set(slider, { x: wrap(x) });
+      },
+    });
   }, []);
 
   return (
     <section id="partners">
-      <div className="overflow-hidden w-full">
+      <div className="relative overflow-hidden w-full">
         <div
-          ref={trackRef}
+          ref={sliderRef}
           className="flex gap-[64px] cursor-grab active:cursor-grabbing"
         >
           {slides.map((item, i) => (
@@ -97,6 +89,7 @@ export default function Partners() {
               height={item.h}
               className="object-contain select-none pointer-events-none"
               draggable={false}
+              alt="partner"
             />
           ))}
         </div>

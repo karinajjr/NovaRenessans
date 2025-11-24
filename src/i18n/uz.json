@@ -96,20 +96,43 @@
       }
     ]
   },
-  "certificateSection": {
-    "badge": "Sertifikatlar",
-    "title": "Sanoat tan olishi",
-    "description": "Mukammallikka bo'lgan sadoqatimiz yetakchi sertifikatlar va hamkorliklar bilan tasdiqlangan",
-    "cards": [
-      {
-        "title": "<<TENZOR SOFT>> PE",
-        "subtitle": "IT PARK",
-        "focus": "Bulutli yechimlar arxitekturasi",
-        "status": "Tasdiqlangan",
-        "year": "2023"
-      }
-    ]
-  },
+
+
+"certificateSection": {
+  "badge": "Sertifikatlar",
+  "title": "Sanoat tomonidan e’tirof",
+  "description": "Mukammallikka bo'lgan sadoqatimiz yetakchi sertifikatlar va hamkorliklar orqali tasdiqlangan",
+
+  "cards": [
+    {
+      "title": "<<TENZOR SOFT>> PE",
+      "subtitle": "IT PARK",
+      "focus": "Bulutli yechimlar arxitekturasi",
+      "status": "Tasdiqlangan",
+      "modalTitle" : "IT PRAK",
+      "year": "2023"
+    },
+    {
+      "title": "NOVA RENESSANS",
+      "subtitle": "IT PARK",
+      "focus": "Rasmiy ravishda IT Park rezidenti deb tan olingan",
+      "status": "Tugallangan",
+      "modalTitle" : "IT PRAK",
+      "year": "2025"
+    },
+    {
+      "title": "Frontend Bootcamp",
+      "subtitle": "Dasturlash akademiyasi",
+      "focus": "React, UI/UX va zamonaviy veb texnologiyalar",
+      "status": "Tasdiqlangan",
+      "modalTitle" : "IT PRAK",
+      "year": "2024"
+    }
+  ]
+},
+
+
+
   "contactSection": {
     "badge": "Bog'lanish",
     "title": "Keling, suhbatni boshlaymiz",
@@ -188,8 +211,8 @@
     "item3":{
         "question": "Aloqa",
           "address": "Toshkent shahri, Mirobod tumani, Maxtumquli ko'chasi",
-          "phone": "+998 (75) 556-56-56",
-          "email": "contact@techsolution.com"
+          "phone": "+998 95 460 10 10",
+          "email": "info@tenzorsoft.com"
       }
   
   }

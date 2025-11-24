@@ -9,7 +9,43 @@ const BOT_TOKEN = "8565375529:AAGecSewxKBWrMBUYWwxEukIEuCch7Px5fw";
 const CHAT_ID = "-1003257673634";
 
 function all() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [openId, setOpenId] = useState(null);
+
+    const certificates = [
+        {
+            id: 0,
+            icon: "/logo/certificate.png",
+            badge: "certificateSection.cards.0.year",
+            title: "certificateSection.cards.0.title",
+            subtitle: "certificateSection.cards.0.subtitle",
+            focus: "certificateSection.cards.0.focus",
+            status: "certificateSection.cards.0.status",
+            modalImage: "/image/itpark.jpeg",
+            modalTitle: "IT Park",
+        },
+        {
+            id: 1,
+            icon: "/logo/certificate.png",
+            badge: "certificateSection.cards.1.year",
+            title: "certificateSection.cards.1.title",
+            subtitle: "certificateSection.cards.1.subtitle",
+            focus: "certificateSection.cards.1.focus",
+            status: "certificateSection.cards.1.status",
+            modalImage: "/image//itparkt.jpg",
+            modalTitle: "IT Park",
+        },
+        {
+            id: 2,
+            icon: "/logo/certificate.png",
+            badge: "certificateSection.cards.2.year",
+            title: "certificateSection.cards.2.title",
+            subtitle: "certificateSection.cards.2.subtitle",
+            focus: "certificateSection.cards.2.focus",
+            status: "certificateSection.cards.2.status",
+            modalImage: "/image/frontend.jpeg",
+            modalTitle: "Frontend Bootcamp",
+        },
+    ];
 
     const homeRef = useRef(null);
     const aboutRef = useRef(null);
@@ -61,6 +97,8 @@ function all() {
         setOpen(false);
         ref.current?.scrollIntoView({ behavior: "smooth" });
     };
+
+
 
     const [scrolled, setScrolled] = useState(false);
 
@@ -180,13 +218,20 @@ function all() {
 
                         <div className="flex  gap-[58px] items-center">
                             <div className="flex md:gap-[40px] xl:gap-[56px] text-white items-center hidden lg:flex">
-                                <button onClick={() => scrollToSection(homeRef)} className="cursor-pointer text-[18px]">{t("navbar.home")} </button>
-                                <button onClick={() => scrollToSection(aboutRef)} className="cursor-pointer text-[18px]">{t("navbar.about")}</button>
-                                <button onClick={() => scrollToSection(servicesRef)} className="cursor-pointer text-[18px]">{t("navbar.services")}</button>
-                                <button onClick={() => scrollToSection(portfolioRef)} className="cursor-pointer text-[18px]">{t("navbar.portfolio")}</button>
-                                <button onClick={() => scrollToSection(certificatesRef)} className="cursor-pointer text-[18px]">{t("navbar.certificates")}</button>
-                                <button onClick={() => scrollToSection(contactRef)} className="cursor-pointer text-[18px]">{t("navbar.contact")}</button>
+                                {[
+                                    { label: t("navbar.home"), ref: homeRef },
+                                    { label: t("navbar.about"), ref: aboutRef },
+                                    { label: t("navbar.services"), ref: servicesRef },
+                                    { label: t("navbar.portfolio"), ref: portfolioRef },
+                                    { label: t("navbar.certificates"), ref: certificatesRef },
+                                    { label: t("navbar.contact"), ref: contactRef },
+                                ].map((item, index) => (
+                                    <button key={index} onClick={() => scrollToSection(item.ref)} className="relative text-[18px] cursor-pointer px-1after:content-[''] after:block after:h-[2px] after:w-full after:bg-white after:absolute after:left-0 after:bottom-0 after:scale-x-0 after:origin-center after:transition-transform after:duration-500 after:ease-in-out hover:after:scale-x-100">
+                                        {item.label}
+                                    </button>
+                                ))}
                             </div>
+
 
                             <div className="flex gap-6 items-center">
                                 <LanguageSelector />
@@ -202,12 +247,12 @@ function all() {
 
                     {open && (
                         <div className="lg:hidden bg-black/60 backdrop-blur-lg text-white text-[18px] px-4 py-4 space-y-4 rounded-xl mx-2">
-                            <button onClick={() => scrollTo(homeRef)} className="block">Home</button>
-                            <button onClick={() => scrollTo(aboutRef)} className="block">About Us</button>
-                            <button onClick={() => scrollTo(servicesRef)} className="block">Services</button>
-                            <button onClick={() => scrollTo(portfolioRef)} className="block">Portfolio</button>
-                            <button onClick={() => scrollTo(certificatesRef)} className="block">Certificates</button>
-                            <button onClick={() => scrollTo(contactRef)} className="block">Contact</button>
+                            <button onClick={() => scrollTo(homeRef)} className="block">{t("navbar.home")}</button>
+                            <button onClick={() => scrollTo(aboutRef)} className="block">{t("navbar.about")}</button>
+                            <button onClick={() => scrollTo(servicesRef)} className="block">{t("navbar.services")}</button>
+                            <button onClick={() => scrollTo(portfolioRef)} className="block">{t("navbar.portfolio")}</button>
+                            <button onClick={() => scrollTo(certificatesRef)} className="block">{t("navbar.certificates")}</button>
+                            <button onClick={() => scrollTo(contactRef)} className="block">{t("navbar.contact")}</button>
                         </div>
                     )}
                 </nav>
@@ -216,7 +261,7 @@ function all() {
                     <div className="space-y-6">
                         <h1 className="text-5xl md:text-6xl  font-semibold">  <Trans i18nKey="hero.title" /> </h1>
                         <p className="text-[20px] md:text-[25px]"> <Trans i18nKey="hero.description" /> </p>
-                        <button className="bg-[#0349A7] text-white w-[147px] h-[52px] rounded-xl text-lg">{t("hero.cta")}</button>
+                        <button className="hover:border-2 hover:border-[#0349A7] bg-[#0349A7] hover:bg-white hover:text-[#0349A7] text-white w-[147px] h-[52px] rounded-xl text-lg">{t("hero.cta")}</button>
                     </div>
                 </section>
 
@@ -364,7 +409,7 @@ function all() {
                         </button>
                         <h1 className="font-semibold text-[24px] md:text-4xl  text-center  md:w-[440px]">{t("portfolioSection.title")}</h1>
                         <p className=" text-center text-[16px] md:text-xl w-[335px] md:w-[700px]">{t("portfolioSection.description")}</p>
-                        <button className="rounded-lg bg-[#0349A7]  text-white flex gap-3 w-[137px] md:w-[147px] h-[52px] text-center justify-center items-center">
+                        <button className="rounded-lg bg-[#0349A7] hover:bg-white hover:border-2 hover:border-[#0349A7] hover:text-[#0349A7] text-white flex gap-3 w-[137px] md:w-[147px] h-[52px] text-center justify-center items-center">
                             <h1 className="text-[16px]">{t("portfolioSection.cta")}</h1>
                         </button>
                         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -421,80 +466,64 @@ function all() {
                     <p className="text-center text-[16px] md:text-xl w-[295px] md:w-[690px] ">{t("certificateSection.description")}</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                        {certificates.map((card) => (
+                            <div key={card.id}>
+                                <div onClick={() => setOpenId(card.id)} className="cursor-pointer shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[415px] xl:h-[370px] hover:bg-[#F8FBFF]" >
+                                    <div className="space-y-[20px] md:space-y-5">
+                                        <div className="flex justify-between">
+                                            <div className="bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px] xl:h-[70px] flex items-center justify-center rounded-xl">
+                                                <img src={card.icon} className="w-[24px] h-[28px]" />
+                                            </div>
+                                            <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">
+                                                {t(card.badge)}
+                                            </div>
+                                        </div>
 
-                        <div onClick={() => setIsOpen(true)} className="cursor-pointer shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[415px] xl:h-[370px] hover:bg-[#F8FBFF]">
-                            <div className="space-y-[20px] md:space-y-5">
-                                <div className=" flex justify-between">
-                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
-                                        <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
+                                        <div>
+                                            <h1 className="font-medium text-[20px] xl:text-[28px]">
+                                                {t(card.title)}
+                                            </h1>
+                                            <p className="text-[16px] xl:text-lg text-[#8D8D8D]">
+                                                {t(card.subtitle)}
+                                            </p>
+                                        </div>
+
+                                        <p className="font-dmsans font-light italic text-[16px] xl:text-[22px]">
+                                            {t(card.focus)}
+                                        </p>
+
+                                        <div className="flex gap-2.5">
+                                            <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
+                                            <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t(card.status)}</p>
+                                        </div>
                                     </div>
-                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
                                 </div>
-                                <div>
-                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
-                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
-                                </div>
-                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
-                                <div className="flex gap-2.5">
-                                    <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
-                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        {isOpen && (
-                            <div className="fixed inset-0 bg-black/30 bg-opacity-50 flex items-center justify-center z-50">
-                                <div className="bg-white p-2 md:p-4 rounded-xl relative flex flex-col">
-                                    <div className="flex justify-between items-center mb-2  px-4">
-                                        <h1 className="font-bold text-xl">It Park</h1>
-                                        <button onClick={() => setIsOpen(false)} className="  font-bold text-2xl"> ×</button>
+                                {/* Modal */}
+                                {openId === card.id && (
+                                    <div className="fixed inset-0 bg-black/30 bg-opacity-50 flex items-center justify-center z-50">
+                                        <div className="bg-white p-2 md:p-4 rounded-xl relative flex flex-col">
+                                            <div className="flex justify-between items-center mb-2 px-4">
+                                                <h1 className="font-bold text-xl">{card.modalTitle}</h1>
+                                                <button
+                                                    onClick={() => setOpenId(null)}
+                                                    className="text-sm hover:text-gray-500 border border-black hover:border-gray-500 py-0.5 rounded-full px-1.5 flex items-center justify-center"
+                                                >
+                                                    <i className="bi bi-x-lg"></i>
+                                                </button>
+                                            </div>
+
+                                            <img
+                                                src={card.modalImage}
+                                                className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] object-contain rounded-lg"
+                                            />
+                                        </div>
                                     </div>
-
-                                    <img src="/image/itpark.jpeg" className="w-[300px] md:w-[600px] h-[200px] md:h-[400px] object-contain rounded-lg" />
-                                </div>
+                                )}
                             </div>
-                        )}
-
-                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[415px] xl:h-[370px]  hover:bg-[#F8FBFF]">
-                            <div className="space-y-[20px] md:space-y-5">
-                                <div className=" flex justify-between">
-                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
-                                        <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
-                                    </div>
-                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
-                                </div>
-                                <div>
-                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
-                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
-                                </div>
-                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
-                                <div className="flex gap-2.5">
-                                    <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
-                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="shadow-lg shadow-gray-300 px-7 py-8 rounded-3xl border border-[#0349A71A] w-[335px] h-[320px] xl:w-[415px] xl:h-[370px]  hover:bg-[#F8FBFF]">
-                            <div className="space-y-[20px] md:space-y-5">
-                                <div className=" flex justify-between">
-                                    <div className=" bg-[#e0ecfb] w-[50px] xl:w-[70px] h-[50px]  xl:h-[70px] flex items-center justify-center rounded-xl ">
-                                        <img src="/logo/certificate.png" className="w-[24px] h-[28px]" />
-                                    </div>
-                                    <div className="flex items-center justify-center rounded-full px-3 bg-[#0853C4] text-white text-sm w-[68px] xl:w-[67px] h-[28px] xl:h-[35px]">{t("certificateSection.cards.0.year")}</div>
-                                </div>
-                                <div>
-                                    <h1 className="font-medium text-[20px] xl:text-[28px]">{t("certificateSection.cards.0.title")}</h1>
-                                    <p className=" text-[16px] xl:text-lg text-[#8D8D8D]">{t("certificateSection.cards.0.subtitle")}</p>
-                                </div>
-                                <p className=" font-dmsans font-light italic text-[16px] xl:text-[22px]">{t("certificateSection.cards.0.focus")}</p>
-                                <div className="flex gap-2.5">
-                                    <img src="/logo/certificateSuccess.png" className="w-[24px] h-[24px] mt-0.5" />
-                                    <p className="text-[#8D8D8D] text-[16px] xl:text-xl">{t("certificateSection.cards.0.status")}</p>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
+
                 </section>
 
                 <section ref={contactRef} id="Contact" className="bg-gradient-to-b from-[#0348A408] to-white flex flex-col justify-center items-center">
@@ -551,56 +580,80 @@ function all() {
             <footer className="bg-[rgb(0,17,40)]  text-white">
                 <div className="max-w-[1440px] mx-auto flex flex-col py-[70px] space-y-[80px]  px-[20px] md:px-4 lg:px-3 2xl:px-0">
                     <div className="flex flex-col sm:flex-row sm:justify-between md:items-start gap-3 space-y-6">
-
                         <div className="flex flex-col space-y-[19px]">
                             <img src="/logo/tenzorsoft-logo.png" className="w-[94px] h-[60px]" />
                             <p className="text-xl md:w-[270px] lg:w-[290px] xl:w-[341px]">{t("footer.tagline")}</p>
                             <div className="flex gap-[17px]">
-                                <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center">
-                                    <img src="/logo/Facebook.png" className="w-[10px]" />
-                                </button>
-                                <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center">
-                                    <img src="/logo/instagram.png" className="w-[22px]" />
-                                </button>
-                                <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center">
-                                    <img src="/logo/telegram.png" className="w-[22px]" />
-                                </button>
-                                <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center">
-                                    <img src="/logo/linkedin.png" className="w-[22px]" />
-                                </button>
+
+                                <a href="https://www.youtube.com/@TENZORSOFT-ITCOMPANY" target="_blank" rel="noopener noreferrer" >
+                                    <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center hover:border-2 hover:border-[#0349A7]">
+                                        <img src="/logo/Facebook.png" className="w-[10px]" />
+                                    </button>
+                                </a>
+
+                                <a href="https://www.instagram.com/tenzor_soft/" target="_blank" rel="noopener noreferrer" >
+                                    <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center hover:border-2 hover:border-[#0349A7]">
+                                        <img src="/logo/instagram.png" className="w-[22px]" />
+                                    </button>
+                                </a>
+
+                                <a href="https://t.me/tenzor_soft" target="_blank" rel="noopener noreferrer" >
+                                    <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center hover:border-2 hover:border-[#0349A7]">
+                                        <img src="/logo/telegram.png" className="w-[22px]" />
+                                    </button>
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/tenzor-soft-396297329/" target="_blank" rel="noopener noreferrer">
+                                    <button className="w-[44px] h-[44px] bg-white rounded-[12px] flex items-center justify-center hover:border-2 hover:border-[#0349A7]">
+                                        <img src="/logo/linkedin.png" className="w-[22px]" />
+                                    </button>
+                                </a>
+
                             </div>
                         </div>
 
-                        <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
+                        <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D] ">
                             <h1 className="text-xl font-semibold text-white">
                                 {t("footer.columns.template.title")}
                             </h1>
-                            <a href="/">{t("footer.columns.template.home")}</a>
-                            <a href="/about">{t("footer.columns.template.about")}</a>
-                            <a href="/services">{t("footer.columns.template.services")}</a>
-                            <a href="/portfolio">{t("footer.columns.template.portfolio")}</a>
-                            <a href="/certificates">{t("footer.columns.template.certificates")}</a>
-                            <a href="/contact">{t("footer.columns.template.contact")}</a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(homeRef)}>
+                              {t("footer.columns.template.home")}
+                            </a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(aboutRef)} >
+                                {t("footer.columns.template.about")}
+                            </a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(servicesRef)} >
+                                {t("footer.columns.template.services")}
+                            </a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(portfolioRef)} >
+                                {t("footer.columns.template.portfolio")}
+                            </a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(certificatesRef)} >
+                                {t("footer.columns.template.certificates")}
+                            </a>
+                            <a className="hover:text-white cursor-pointer" onClick={() => scrollToSection(contactRef)} >
+                                {t("footer.columns.template.contact")}
+                            </a>
                         </div>
 
                         <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
-                            <h1 className="text-xl font-semibold text-white">Services</h1>
-                            <a href="">{t("footer.columns.services.software")}</a>
-                            <a href="">{t("footer.columns.services.1cProduction")}</a>
-                            <a href="">{t("footer.columns.services.bitrix")}</a>
-                            <a href="">{t("footer.columns.services.antivirus")}</a>
-                            <a href="">{t("footer.columns.services.automation")}</a>
-                            <a href="">{t("footer.columns.services.biometric")}</a>
-                            <a href="">{t("footer.columns.services.itservices")}</a>
+                            <h1 className="text-xl font-semibold text-white">{t("footer.columns.services.title")}</h1>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.software")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.1cProduction")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.bitrix")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.antivirus")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.automation")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.biometric")}</a>
+                            <a href="" className="hover:text-white">{t("footer.columns.services.itservices")}</a>
                         </div>
 
                         <div className="hidden lg:flex flex-col space-y-[16px] text-[#8D8D8D]">
                             <h1 className="text-xl font-semibold text-white">
                                 {t("footer.columns.contact.title")}
                             </h1>
-                            <p>Tashkent city Mirabad <br /> district st. Magtymguly</p>
-                            <span>+998(75) 556-56-56</span>
-                            <p>contact@techsolution.com</p>
+                            <p className="hover:text-white">Tashkent city Mirabad <br /> district st. Magtymguly</p>
+                            <span className="hover:text-white">+998 95 460 10 10</span>
+                            <p className="hover:text-white">info@tenzorsoft.com</p>
                         </div>
 
                         <div className="space-y-3">
@@ -640,7 +693,7 @@ function all() {
                                     {t("footer.subscribeHeading")}
                                 </h1>
                                 <input type="text" id="name" placeholder={t("footer.subscribePlaceholder")} className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[48px] px-4 py-2 border border-[#8D8D8D] rounded-lg" />
-                                <button className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[52px] bg-[#0349A7] border border-[#0349A7] rounded-[12px] font-medium text-white text-lg">
+                                <button className="md:w-[420px] lg:w-[200px] xl:w-[320px] h-[52px] hover:bg-white hover:text-[#0349A7] bg-[#0349A7] hover:border-2 hover:border-[#0349A7] rounded-[12px] font-medium text-white text-lg">
                                     {t("footer.subscribeCta")}
                                 </button>
                             </div>
@@ -652,7 +705,7 @@ function all() {
                         <hr className="border-t border-[#8D8D8D80]" />
                         <div className="flex flex-col justify-between md:flex-row space-y-4 md:space-y-0 text-center">
                             <p className="">{t("footer.rights")}</p>
-                          
+
                         </div>
                     </div>
                 </div>

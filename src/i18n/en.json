@@ -99,21 +99,39 @@
       }
     ]
   },
+"certificateSection": {
+  "badge": "Certificats",
+  "title": "Industry Recognition",
+  "description": "Our commitment to excellence is validated by industry-leading certifications and partnerships",
 
-  "certificateSection": {
-    "badge": "Certificats",
-    "title": "Industry Recognition",
-    "description": "Our commitment to excellence is validated by industry-leading certifications and partnerships",
-    "cards": [
-      {
-        "title": "<<TENZOR SOFT>> PE",
-        "subtitle": " IT PRAK",
-        "focus": "Cloud Solutions Architecture",
-        "status": "Verified",
-        "year": "2023"
-      }
-    ]
-  },
+  "cards": [
+    {
+      "title": "TENZOR SOFT",
+      "subtitle": "IT PRAK",
+      "focus": "Cloud Solutions Architecture",
+      "status": "Verified",
+     "modalTitle" : "IT PRAK",
+      "year": "2023"
+    },
+    {
+      "title": "NOVA RENESSANS",
+      "subtitle": "IT PRAK",
+      "focus": "Officially recognized as an IT Park resident",
+      "status": "Completed",
+      "modalTitle" : "IT PRAK",
+      "year": "2025"
+    },
+    {
+      "title": "Frontend Bootcamp",
+      "subtitle": "Programming Academy",
+      "focus": "React, UI/UX, Modern Web Technologies",
+      "status": "Verified",
+      "modalTitle" : "IT PRAK",
+      "year": "2024"
+    }
+  ]
+},
+
 
   "contactSection": {
     "badge": "Contact",
@@ -198,8 +216,8 @@
         "question": "Contact",
         "answers": {
           "address": "Tashkent city, Mirabad district, Magtymguly street",
-          "phone": "+998 (75) 556-56-56",
-          "email": "contact@techsolution.com"
+          "phone": "++998 95 460 10 10",
+          "email": "info@tenzorsoft.com"
         }
       }
     ]

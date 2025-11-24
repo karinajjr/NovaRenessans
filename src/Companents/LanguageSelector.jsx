@@ -23,32 +23,21 @@ export default function LanguageSelector() {
         <div className="relative w-fit">
             
             {/* Main button */}
-            <button onClick={() => setOpen(!open)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-gray-200 hover:shadow-lg transition-all">
+            <button onClick={() => setOpen(!open)} className="flex items-center justify-center gap-2 px-4 py-2 bg-white hover:border hover:border-[#0349A7] rounded-full shadow-md border border-gray-200 hover:shadow-lg transition-all">
                 <img src="/logo/globe.png" className="w-[15px] mr-1"/>
               
                 <span className="text-sm font-medium text-gray-700">{currentLang.label}</span>
-                <ChevronDown
-                    size={16}
-                    className={`text-gray-600 transition-transform ${open ? "rotate-180" : ""}`}
-                />
+                <ChevronDown size={16} className={`text-gray-600 transition-transform ${open ? "rotate-180" : ""}`}/>
             </button>
 
             {/* Dropdown */}
             {open && (
-                <div className="absolute top-full mt-2 w-48 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden z-50">
+                <div className="absolute top-full mt-2 w-40 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden z-50">
                     {languages
                         .filter(l => l.code !== currentLang.code)
                         .map(lang => (
-                            <button
-                                key={lang.code}
-                                onClick={() => selectLang(lang.code)}
-                                className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors"
-                            >
-                                <img
-                                    src={lang.flag}
-                                    alt={lang.label}
-                                    className="w-5 h-5 rounded-sm"
-                                />
+                            <button key={lang.code} onClick={() => selectLang(lang.code)} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors" >
+                                <img src={lang.flag} alt={lang.label} className="w-5 h-5 rounded-sm" />
 
                                 {/* 👉 Полное название языка */}
                                 <span className="text-sm font-medium text-gray-700">
