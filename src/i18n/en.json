@@ -95,7 +95,7 @@
       },
       {
         "title": "XMed",
-        "body": "XMed – uyingizdan chiqmasdan tibbiy maslahat oladigan, onlayn shifokor qabul tizimi."
+        "body": "XMed is an online doctor appointment system that allows you to receive medical advice without leaving your home."
       }
     ]
   },
@@ -188,21 +188,18 @@
   },
 
   "faq": {
-    "items": [
-      {
+     "item1":{
         "question": "Template",
-        "answers": {
           "home": "Home",
           "about": "About Us",
           "services": "Services",
           "portfolio": "Portfolio",
           "certificates": "Certificates",
           "contaёct": "Contact"
-        }
       },
-      {
+
+     "item2":{
         "question": "Services",
-        "answers": {
           "software": "Software development",
           "1cProduction": "1C Production",
           "bitrix": "1C Bitrix",
@@ -210,16 +207,14 @@
           "automation": "Automation",
           "biometric": "Biometric systems",
           "itservices": "IT Services"
-        }
       },
-      {
+
+      "item3":{
         "question": "Contact",
-        "answers": {
           "address": "Tashkent city, Mirabad district, Magtymguly street",
           "phone": "++998 95 460 10 10",
           "email": "info@tenzorsoft.com"
-        }
       }
-    ]
+    
   }
 }
