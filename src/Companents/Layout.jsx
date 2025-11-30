@@ -138,7 +138,7 @@ function Layout() {
             </main>
 
             <footer className="bg-[#163133]  text-white">
-                <div className="max-w-[1440px] mx-auto flex flex-col py-[70px] space-y-[80px]  px-[20px] md:px-4 lg:px-3 2xl:px-0">
+                <div className="max-w-[1440px] mx-auto flex flex-col py-[50px] space-y-[30px]  px-[20px] md:px-4 lg:px-3 2xl:px-0">
                     <div className="flex flex-col sm:flex-row sm:justify-between md:items-start gap-3 space-y-6">
                         <div className="flex flex-col space-y-[19px]">
                             <img src="/logo/NovaLogo.png" className="w-[94px] h-[60px]" />
