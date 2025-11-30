@@ -128,27 +128,27 @@ function all() {
 
             <section id="hero" ref={homeRef} className="bg-[#163133] h-screen">
 
-                <div className="relative flex flex-col md:flex-row justify-center md:justify-between space-y-9 items-start md:items-center h-full pt-[100px] max-w-[1440px] mx-auto px-[20px] md:px-2 lg:px-3 2xl:px-0 text-white bg-[url('/image/HopeImg.webp')] bg-cover bg-center bg-no-repeat md:bg-none before:absolute before:inset-0 before:bg-black/60 md:before:bg-transparent  before:z-0">
-                    <div className="relative z-10 space-y-[16px] md:space-y-[36px] flex flex-col justify-center items-start">
+                <div className="relative flex flex-col md:flex-row justify-center md:justify-between space-y-2 items-start md:items-center h-full pt-[100px] max-w-[1440px] mx-auto px-[20px] md:px-2 lg:px-3 2xl:px-0 text-white bg-[url('/image/HopeImg.webp')] bg-cover bg-center bg-no-repeat md:bg-none before:absolute before:inset-0 before:bg-black/60 md:before:bg-transparent  before:z-0">
+                    <div className="relative z-10 space-y-[10px] md:space-y-[36px] flex flex-col justify-center items-start">
                         <h1 className="text-[35px] md:[42px] xl:text-[49px] font-semibold w-[359px] md:w-[560px] xl:w-[690px]  leading-[1.1]">{t("hero.title")}</h1>
                         <p className="text-[20px] md:text-[24px] w-[355px] md:w-[610px] xl:w-[710px] leading-[1.2]"> {t("hero.description")}</p>
                         <button className="hover:border-2 hover:border-[#FAD28C] bg-[#FAD28C] hover:bg-white hover:text-[#FAD28C] text-black w-[147px] h-[52px] rounded-full text-[20px]">
                             {t("hero.cta")}
                         </button>
-                        <div className="border-t border-[#FAD28C]/15 w-[335px] md:w-[600px] xl:w-[700px]"></div>
+                        {/* <div className="border-t border-[#FAD28C]/15 w-[335px] md:w-[600px] xl:w-[700px]"></div> */}
 
                         <div className="flex w-[350px] md:w-[400px] gap-[36px] text-[#FAD28C]">
-                            <div className="space-y-[16px] flex flex-col justify-center items-center">
+                            <div className="space-y-[4px] md:space-y-[16px] flex flex-col justify-center items-center">
                                 <p className="font-semibold md:text-[38px] text-[34px]">1000+</p>
                                 <p className="md:text-[20px] text-[15px] leading-[1.1]">{t("hero.clients")}</p>
                             </div>
 
-                            <div className="space-y-[16px] flex flex-col justify-center items-center">
+                            <div className="space-y-[4px] md:space-y-[16px] flex flex-col justify-center items-center">
                                 <p className="font-semibold md:text-[38px] text-[34px]">99.9%</p>
                                 <p className="md:text-[20px] text-[15px] leading-[1.1]">{t("hero.uptime")}</p>
                             </div>
 
-                            <div className="space-y-[16px] flex flex-col justify-center items-center">
+                            <div className="space-y-[4px] md:space-y-[16px] flex flex-col justify-center items-center">
                                 <p className="font-semibold xl:text-[38px] text-[34px]">24/7</p>
                                 <p className="md:text-[20px] text-[15px] leading-[1.1]">{t("hero.support")}</p>
                             </div>
