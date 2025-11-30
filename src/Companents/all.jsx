@@ -157,7 +157,7 @@ function all() {
 
                     <div className="relative z-10 md:relative md:w-[512px] md:h-[700px] rounded-2xl md:overflow-visible">
 
-                        <img src="/image/HopeImg.png" className="hidden md:block w-full h-full object-cover rounded-2xl" />
+                        <img src="/image/HopeImg.webp" className="hidden md:block w-full h-full object-cover rounded-4xl" />
 
                         <div className="md:absolute md:left-[-60px] bottom-[60px] bg-white/5 backdrop-blur-md w-[166px] md:w-[214px] h-[147px] md:h-[222px] border border-[#E8E8E880] text-white p-4 rounded-xl flex items-center gap-3">
                             <div className="flex flex-col justify-between items-start h-full">
@@ -234,7 +234,7 @@ function all() {
                         </div>
 
                         <div className="overflow-hidden rounded-4xl group">
-                            <img src="/image/AboutImg.png" className="h-[335px] md:h-[587px] w-[335px] md:w-[444px] rounded-2xl transition-transform duration-500 group-hover:scale-110" />
+                            <img src="/image/AboutImg.webp" className="h-[335px] md:h-[587px] w-[335px] md:w-[444px] rounded-2xl transition-transform duration-500 group-hover:scale-110" />
                         </div>
 
                         <div className="flex flex-col space-y-[30px] md:space-y-0 md:justify-between md:h-[550px]">
