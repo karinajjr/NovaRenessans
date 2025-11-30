@@ -9,16 +9,16 @@ export default function Partners() {
   const animationRef = useRef(null);
 
   const slides = [
-    { src: "/partner/energetika-vazirliki.png", w: 137, h: 40 },
-    { src: "/partner/hamkorbank.png", w: 40, h: 40 },
-    { src: "/partner/uzpotash.png", w: 179, h: 40 },
-    { src: "/partner/ungbuxoronqiz.png", w: 56, h: 40 },
-    { src: "/partner/kungradskiy.png", w: 158, h: 40 },
-    { src: "/partner/uzkimyasanoat.png", w: 64, h: 40 },
-    { src: "/partner/navoiyazot.png", w: 209, h: 40 },
-    { src: "/partner/ammofos.png", w: 58, h: 40 },
-    { src: "/partner/maxam-chirchik.png", w: 172, h: 40 },
-    { src: "/partner/fosforit.png", w: 40, h: 40 },
+    { src: "https://framerusercontent.com/images/wKjhKn5qbcV59TKaJPl4nD1VE.png", w: 80, h: 40 },
+    { src: "/partner/itpark.png", w: 80, h: 40 },
+    { src: "https://api-portal.gov.uz/uploads/17/2025/06/20/3a596ff3-a1ab-526d-1f33-da8943ddfd03_authority_17.png", w: 60, h: 40 },
+     { src: "/partner/ungbuxoronqiz.png", w: 56, h: 40 },
+    // { src: "/partner/kungradskiy.png", w: 158, h: 40 },
+      // { src: "/partner/uzkimyasanoat.png", w: 64, h: 40 },
+    // { src: "/partner/navoiyazot.png", w: 209, h: 40 },
+    // { src: "/partner/ammofos.png", w: 58, h: 40 },
+    // { src: "/partner/maxam-chirchik.png", w: 172, h: 40 },
+    // { src: "/partner/fosforit.png", w: 40, h: 40 },
   ];
 
   useEffect(() => {

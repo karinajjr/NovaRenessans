@@ -28,12 +28,12 @@ function all() {
         const file = e.target.file.files[0]; // <-- файл
 
         const text = `
-📩 *Yangi xabar!*
-👤 *Ism:* ${name}
-📧 *Email:* ${email}
-🏢 *Kompaniya:* ${company}
-💬 *Xabar:* ${message}
-    `;
+        📩 *Yangi xabar!*
+        👤 *Ism:* ${name}
+        📧 *Email:* ${email}
+        🏢 *Kompaniya:* ${company}
+        💬 *Xabar:* ${message}
+        `;
 
         try {
             const formData = new FormData();
