@@ -9,7 +9,6 @@ import { Certificates } from "./Certificates";
 import CountUp from './additional/CountUp'
 
 
-
 const BOT_TOKEN = "8529319150:AAH7QpRm1DBHoL9V8i6d69X3V9UNqsR7tAA";
 const CHAT_ID = "-1003451614735";
 
@@ -128,8 +127,7 @@ function all() {
         <div>
 
             <section id="hero" ref={homeRef} className="bg-[#163133] h-screen">
-
-                <div className="relative flex flex-col md:flex-row justify-center md:justify-between space-y-2 items-start md:items-center h-full pt-[100px] max-w-[1440px] mx-auto px-[20px] md:px-2 lg:px-3 2xl:px-0 text-white bg-[url('/image/HopeImg.webp')] bg-cover bg-center bg-no-repeat md:bg-none before:absolute before:inset-0 before:bg-black/60 md:before:bg-transparent  before:z-0">
+                <div className="relative flex flex-col md:flex-row justify-center md:justify-between space-y-2 items-start md:items-center h-full pt-[100px] max-w-[1440px] mx-auto px-[30px] md:px-5 lg:px-6 2xl:px-2 text-white bg-[url('/image/HopeImg.webp')] bg-cover bg-center bg-no-repeat md:bg-none before:absolute before:inset-0 before:bg-black/60 md:before:bg-transparent  before:z-0">
                     <div className="relative z-10 space-y-[10px] md:space-y-[36px] flex flex-col justify-center items-start">
                         <h1 className="text-[35px] md:[42px] xl:text-[49px] font-semibold w-[359px] md:w-[560px] xl:w-[690px]  leading-[1.1]">{t("hero.title")}</h1>
                         <p className="text-[20px] md:text-[24px] w-[355px] md:w-[610px] xl:w-[710px] leading-[1.2]"> {t("hero.description")}</p>
@@ -295,8 +293,6 @@ function all() {
                         </div>
                     </div>
                 </section>
-            
-
 
                 <section ref={portfolioRef} id="Porfolio" className="flex items-center">
                     <div className=" max-w-[1440px] mx-auto flex flex-col items-center justify-center my-[20px] md:my-[70px] space-y-2 md:space-y-4 px-[10px] md:px-2 lg:px-3 2xl:px-0">
@@ -309,59 +305,57 @@ function all() {
                             {t("portfolioSection.cta")}
                         </Link> */}
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                            <div className="group w-[335px] xl:w-[467px] h-[614px]  xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
-                                <div className="overflow-hidden rounded-xl">
-                                    <img src="/image/portfolioone.png" className="w-[335px] xl:w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
-                                </div>
-                                <div className="flex justify-between items-center m-2">
-                                    <div className="flex flex-col items-start space-y-2">
-                                        <h1 className="font-bold text-[24px]">
-                                            {t("portfolioSection.projects.0.title")}
-                                        </h1>
-                                        <p className="text-[#D7D7D7] text-[20px]">
-                                            Website
-                                        </p>
+                     <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+                            <a href="https://logistx.uz" target="_blank" rel="noopener noreferrer" className="block">
+                                <div className="group border border-[#0349A71A] hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
+                                    <div className="overflow-hidden rounded-xl">
+                                        <img src="/image/LogistX.png" className="w-[591px] sm:w-[681px] md:w-[695px] h-[200px] sm:h-[295px] md:h-[364px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
                                     </div>
-                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
-                                </div>
-                            </div>
-
-                            <div className="group w-[335px] xl:w-[467px] h-[614px]  xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
-                                <div className="overflow-hidden rounded-xl">
-                                    <img src="/image/portfoliotwo.png" className="w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
-                                </div>
-                                <div className="flex justify-between items-center m-2">
-                                    <div className="flex flex-col items-start space-y-2">
-                                        <h1 className="font-bold text-[24px]">
-                                            {t("portfolioSection.projects.0.title")}
-                                        </h1>
-                                        <p className="text-[#D7D7D7] text-[20px]">
-                                            Website
-                                        </p>
+                                    <div className="flex justify-between items-center m-2">
+                                        <div className="flex flex-col items-start space-y-2">
+                                            <h1 className="font-bold text-2xl">
+                                                {t("portfolioSection.projects.0.title")}
+                                            </h1>
+                                            <p className="text-[#8D8D8D] text-base">
+                                                {t("portfolioSection.projects.0.body")}
+                                            </p>
+                                        </div>
+                                        <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
                                     </div>
-                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className="group w-[335px] xl:w-[467px] h-[614px] xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
-                                <div className="overflow-hidden rounded-xl">
-                                    <img src="/image/portfoliothre.png" className="w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
-                                </div>
-                                <div className="flex justify-between items-center m-2">
-                                    <div className="flex flex-col items-start space-y-2">
-                                        <h1 className="font-bold text-[24px]">
-                                            {t("portfolioSection.projects.0.title")}
-                                        </h1>
-                                        <p className="text-[#D7D7D7] text-[20px]">
-                                            Website
-                                        </p>
+                            <a href="https://bepulgps.uz" target="_blank" rel="noopener noreferrer" className="block">
+                                <div className="group border border-[#0349A71A] hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden ">
+                                    <div className="overflow-hidden rounded-xl">
+                                        <img src="/image/BepulGPS.png" className="w-[591px] sm:w-[681px]  md:w-[695px] h-[200px] sm:h-[295px] md:h-[364px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
                                     </div>
-                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                    <div className="flex justify-between items-center m-2">
+                                        <div className="flex flex-col items-start space-y-2">
+                                            <h1 className="font-bold text-2xl">{t("portfolioSection.projects.1.title")}</h1>
+                                            <p className="text-[#8D8D8D] text-base">{t("portfolioSection.projects.1.body")}</p>
+                                        </div>
+                                        <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
 
+                            <a href="https://xmed.uz/" target="_blank" rel="noopener noreferrer" className="block">
+                                <div className="group border border-[#0349A71A] hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden hidden lg:block">
+                                    <div className="overflow-hidden rounded-xl">
+                                        <img src="/image/Xmed.png" className="w-[591px] sm:w-[681px]  md:w-[695px] h-[200px] sm:h-[295px] md:h-[364px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                                    </div>
+                                    <div className="flex justify-between items-center m-2">
+                                        <div className="flex flex-col items-start space-y-2">
+                                            <h1 className="font-bold text-2xl">{t("portfolioSection.projects.2.title")}</h1>
+                                            <p className="text-[#8D8D8D] text-base">{t("portfolioSection.projects.2.body")}</p>
+                                        </div>
+                                        <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
+
                     </div>
                 </section>
 
@@ -448,9 +442,13 @@ function all() {
                         <p className="text-center text-[16px] md:text-xl w-[295px] md:w-[690px] ">{t("certificateSection.description")}</p>
                     </div>
 
-                    <div>
-                        <Certificates />
+                    <div className="flex justify-center items-center ">
+                        <img src="./image/itparkt.jpg" className="w-[400px] h-[300px] rounded-2xl border border-gray-300" />
                     </div>
+
+                    {/* <div>
+                        <Certificates />
+                    </div> */}
                 </section>
 
             </main>

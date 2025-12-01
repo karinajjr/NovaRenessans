@@ -1,3 +1,72 @@
   {/* <div>
                                 <input type="file" name="file" className="flex items-center display:none w-[303px] md:w-[638px] h-[48px] md:h-[54px]  px-4 py-3 border border-gray-300 rounded-lg " />
                             </div> */}
+
+
+
+                                     <section ref={portfolioRef} id="Porfolio" className="flex items-center">
+                    <div className=" max-w-[1440px] mx-auto flex flex-col items-center justify-center my-[20px] md:my-[70px] space-y-2 md:space-y-4 px-[10px] md:px-2 lg:px-3 2xl:px-0">
+                        <button className="rounded-full text-[#579094] font-medium border border-[#579094] flex w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
+                            <li className="text-2xl  ml-4 ">{t("portfolioSection.badge")}</li>
+                        </button>
+                        <h1 className="font-semibold text-[24px] md:text-4xl  text-center  md:w-[440px]">{t("portfolioSection.title")}</h1>
+                        <p className=" text-center text-[16px] md:text-xl w-[335px] md:w-[700px]">{t("portfolioSection.description")}</p>
+                        {/* <Link to="/portfolio" className="rounded-full bg-[#FAD28C] hover:bg-white hover:border-2 hover:border-[#FAD28C] hover:text-[#FAD28C] flex w-[137px] md:w-[147px] h-[52px] text-center justify-center items-center text-[18px]">
+                            {t("portfolioSection.cta")}
+                        </Link> */}
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                            <div className="group w-[335px] xl:w-[467px] h-[614px]  xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
+                                <div className="overflow-hidden rounded-xl">
+                                    <img src="/image/portfolioone.png" className="w-[335px] xl:w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                                </div>
+                                <div className="flex justify-between items-center m-2">
+                                    <div className="flex flex-col items-start space-y-2">
+                                        <h1 className="font-bold text-[24px]">
+                                            {t("portfolioSection.projects.0.title")}
+                                        </h1>
+                                        <p className="text-[#D7D7D7] text-[20px]">
+                                            Website
+                                        </p>
+                                    </div>
+                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                </div>
+                            </div>
+
+                            <div className="group w-[335px] xl:w-[467px] h-[614px]  xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
+                                <div className="overflow-hidden rounded-xl">
+                                    <img src="/image/portfoliotwo.png" className="w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                                </div>
+                                <div className="flex justify-between items-center m-2">
+                                    <div className="flex flex-col items-start space-y-2">
+                                        <h1 className="font-bold text-[24px]">
+                                            {t("portfolioSection.projects.0.title")}
+                                        </h1>
+                                        <p className="text-[#D7D7D7] text-[20px]">
+                                            Website
+                                        </p>
+                                    </div>
+                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                </div>
+                            </div>
+
+                            <div className="group w-[335px] xl:w-[467px] h-[614px] xl:h-[858px] border border-gray-50 shadow-lg hover:shadow-xl hover:shadow-gray-300 rounded-2xl p-4 bg-white space-y-[20px] overflow-hidden  ">
+                                <div className="overflow-hidden rounded-xl">
+                                    <img src="/image/portfoliothre.png" className="w-[427px] h-[480px] xl:h-[726px] rounded-xl transition-transform duration-500 group-hover:scale-110" />
+                                </div>
+                                <div className="flex justify-between items-center m-2">
+                                    <div className="flex flex-col items-start space-y-2">
+                                        <h1 className="font-bold text-[24px]">
+                                            {t("portfolioSection.projects.0.title")}
+                                        </h1>
+                                        <p className="text-[#D7D7D7] text-[20px]">
+                                            Website
+                                        </p>
+                                    </div>
+                                    <i className="bi bi-arrow-up-right text-[#8D8D8D] text-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-[45deg] group-hover:text-[#0349A7]"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
