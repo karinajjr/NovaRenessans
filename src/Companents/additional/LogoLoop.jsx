@@ -197,17 +197,7 @@ export const LogoLoop = memo(
     );
 
     const rootClasses = useMemo(
-      () =>
-        cx(
-          'relative group',
-          'overflow-x-hidden',
-          '[--logoloop-gap:32px]',
-          '[--logoloop-logoHeight:28px]',
-          '[--logoloop-fadeColorAuto:#ffffff]',
-          'dark:[--logoloop-fadeColorAuto:#0b0b0b]',
-          scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',
-          className
-        ),
+      () => cx( 'relative group', 'overflow-x-hidden', '[--logoloop-gap:32px]', '[--logoloop-logoHeight:28px]', '[--logoloop-fadeColorAuto:#ffffff]','dark:[--logoloop-fadeColorAuto:#0b0b0b]',scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',className ),
       [scaleOnHover, className]
     );
 
@@ -249,21 +239,11 @@ export const LogoLoop = memo(
         );
 
         return (
-          <li
-            className={cx(
-              'flex-none mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]',
-              scaleOnHover && 'overflow-visible group/item'
-            )}
+          <li className={cx( 'flex-none mr-[var(--logoloop-gap)] text-[length:var(--logoloop-logoHeight)] leading-[1]', scaleOnHover && 'overflow-visible group/item')}
             key={key}
-            role="listitem"
-          >
+            role="listitem" >
             {item.href ? (
-              <a
-                className="inline-flex items-center no-underline rounded hover:opacity-80 transition-opacity"
-                href={item.href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <a className="inline-flex items-center no-underline rounded hover:opacity-80 transition-opacity" href={item.href} target="_blank" rel="noreferrer noopener" >
                 {content}
               </a>
             ) : (
@@ -301,40 +281,14 @@ export const LogoLoop = memo(
     );
 
     return (
-      <div
-        ref={containerRef}
-        className={rootClasses}
-        style={containerStyle}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        role="region"
-        aria-label={ariaLabel}
-      >
+      <div ref={containerRef} className={rootClasses} style={containerStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} role="region" aria-label={ariaLabel}>
         {fadeOut && (
-          <>
-            <div
-              aria-hidden
-              className={cx(
-                'pointer-events-none absolute inset-y-0 left-0 z-10',
-                'w-[clamp(24px,8%,120px)]',
-                'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-              )}
-            />
-            <div
-              aria-hidden
-              className={cx(
-                'pointer-events-none absolute inset-y-0 right-0 z-10',
-                'w-[clamp(24px,8%,120px)]',
-                'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
-              )}
-            />
+          <> <div aria-hidden className={cx( 'pointer-events-none absolute inset-y-0 left-0 z-10', 'w-[clamp(24px,8%,120px)]', 'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]' )} />
+            <div aria-hidden className={cx( 'pointer-events-none absolute inset-y-0 right-0 z-10', 'w-[clamp(24px,8%,120px)]', 'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]')} />
           </>
         )}
 
-        <div
-          className={cx('flex flex-row w-max will-change-transform select-none relative z-0')}
-          ref={trackRef}
-        >
+        <div className={cx('flex flex-row w-max will-change-transform select-none relative z-0')}ref={trackRef}>
           {logoLists}
         </div>
       </div>

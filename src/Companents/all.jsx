@@ -15,8 +15,6 @@ function all() {
     const { t } = useTranslation();
     const [openId, setOpenId] = useState(null);
 
-
-
     //  отправка к телеграму 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -157,7 +155,7 @@ function all() {
 
                     <div className="relative z-10 md:relative md:w-[512px] md:h-[700px] rounded-2xl md:overflow-visible">
 
-                        <img src="/image/HopeImg.webp" className="hidden md:block w-full h-full object-cover rounded-4xl" />
+                        <img src="/image/HopeImg.webp" className="hidden md:block w-full h-[550px] md:h-[660px] xl:h-full 2xl:h-full object-cover rounded-4xl" />
 
                         <div className="md:absolute md:left-[-60px] bottom-[60px] bg-white/5 backdrop-blur-md w-[166px] md:w-[214px] h-[147px] md:h-[222px] border border-[#E8E8E880] text-white p-4 rounded-xl flex items-center gap-3">
                             <div className="flex flex-col justify-between items-start h-full">
@@ -184,7 +182,7 @@ function all() {
                     <Partners />
                 </section>
 
-                <section ref={aboutRef} id="AboutUs" className="max-w-[1440px]  mx-auto space-y-[40px] my-[80px] px-[20px] md:px-2 lg:px-3 2xl:px-0 ">
+                <section ref={aboutRef} id="AboutUs" className="max-w-[1440px]  mx-auto space-y-[40px] my-[80px] px-[20px] md:px-4 lg:px-3 2xl:px-0 ">
                     <div className="space-y-4 items-center justify-center flex flex-col text-center">
                         <button className="rounded-full text-[#579094] font-medium border border-[#579094] flex w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
                             <li className="text-2xl  ml-4 "> {t("aboutSection.badge")}</li>
@@ -197,9 +195,9 @@ function all() {
                         </Link> */}
                     </div>
 
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-[30px] xl:gap-[49px]">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-[20px] xl:gap-[49px]">
 
-                        <div className="flex flex-col space-y-[30px] md:space-y-0 md:justify-between  md:h-[550px] w-[270px] md:w-[220px] xl:w-[260px]">
+                        <div className="flex flex-col space-y-[30px] md:space-y-0 md:justify-between  md:h-[550px] w-[290px] md:w-[220px] xl:w-[260px]">
                             <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left">
                                 <div className="hover:bg-[#fcf3e2] hover:rounded-2xl">
                                     <img src="/icn/eosicn.png" className="w-[54px] h-[54px]" />
@@ -238,35 +236,19 @@ function all() {
                         </div>
 
                         <div className="flex flex-col space-y-[30px] md:space-y-0 md:justify-between md:h-[550px]">
-                            <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left   w-[270px] md:w-[220px] xl:w-[260px]">
+                            <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left   w-[290px] md:w-[220px] xl:w-[260px]">
                                 <img src="/icn/calendarTime.png" className="w-[54px] h-[54px]" />
                                 <div className="space-y-[8px]">
-                                    <h1 className="font-medium text-xl">
-                                        <Trans i18nKey="aboutSection.features.2.title">
-                                            <br className="hidden md:block" />
-                                        </Trans>
-                                    </h1>
-                                    <p className="text-lg">
-                                        <Trans i18nKey="aboutSection.features.2.body">
-                                            <br className="hidden md:block" />
-                                        </Trans>
-                                    </p>
+                                    <h1 className="font-medium text-xl"> {t("aboutSection.features.2.title")} </h1>
+                                    <p className="text-lg">{t("aboutSection.features.2.body")}  </p>
                                 </div>
                             </div>
 
                             <div className="space-y-[12px] flex flex-col items-center md:items-start text-center md:text-left  w-[270px] md:w-[220px] xl:w-[260px]">
                                 <img src="/icn/mobileBrowser.png" className="w-[54px] h-[54px]" />
                                 <div className="space-y-[8px]">
-                                    <h1 className="font-medium text-xl">
-                                        <Trans i18nKey="aboutSection.features.3.title">
-                                            <br className="hidden md:block" />
-                                        </Trans>
-                                    </h1>
-                                    <p className="text-lg">
-                                        <Trans i18nKey="aboutSection.features.3.body">
-                                            <br className="hidden md:block" />
-                                        </Trans>
-                                    </p>
+                                    <h1 className="font-medium text-xl">{t("aboutSection.features.3.title")} </h1>
+                                    <p className="text-lg">{t("aboutSection.features.3.body")}</p>
                                 </div>
                             </div>
                         </div>
@@ -369,28 +351,28 @@ function all() {
                 </section>
 
                 <section ref={contactRef} id="Contact" className="bg-[#F2F2F2] h-full flex flex-col justify-center items-center">
-                    <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row items-center justify-center md:justify-between md:w-full py-6 px-[4] space-y-[20px]">
-                        <div className="flex flex-col justify-between space-y-[20px] h-full ">
+                    <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row items-center justify-center md:justify-between md:w-full py-8 px-[4px] space-y-[20px] xl:space-y-0">
+                        <div className="flex flex-col justify-between gap-[20px] md:gap-[60px] h-full ">
                             <div className="space-y-[16px] flex flex-col items-center md:items-start">
                                 <button className="rounded-full text-[#579094] font-medium border border-[#579094] flex w-[220px] h-[50px] md:h-[55px] text-center justify-center items-center">
                                     <li className="text-2xl  ml-4 ">{t("contactSection.badge")}</li>
                                 </button>
                                 <h1 className="font-semibold text-[24px] w-[350px] md:w-[650px] md:text-[49px] leading-[1.1] text-center md:text-start">  {t("contactSection.title")}</h1>
-                                <p className="text-[16px] md:text-xl w-[295px] md:w-[660px] text-center md:text-start">{t("contactSection.description")}</p>
+                                <p className="text-[16px] md:text-xl w-[330px] md:w-[660px] text-center md:text-start">{t("contactSection.description")}</p>
                             </div>
 
                             <div className="space-y-[16px] flex flex-col items-start justify-start">
                                 <div className="bg-white w-[345px] md:w-[655px] h-[73px] rounded-[24px] flex justify-start items-center gap-[20px] px-4">
                                     <img src="/icn/location.png" className="w-[32px]" />
-                                    <p className="text-[#8D8D8D] font-semibold text-[16px] md:text-[26px]">Tashkent city Mirabad district st. Magtymguly</p>
+                                    <p className="text-[#8D8D8D] font-medium text-[16px] md:text-[24px]">Tashkent city Mirabad district st. Magtymguly</p>
                                 </div>
                                 <div className="bg-white  w-[345px] md:w-[655px] h-[73px] rounded-[24px] flex justify-start items-center gap-[20px] px-4">
                                     <img src="/icn/phone.png" className="w-[32px]" />
-                                    <p className="text-[#8D8D8D] font-semibold text-[16px] md:text-[26px]">+998(75) 556-56-56 +998(75) 556-56-56</p>
+                                    <p className="text-[#8D8D8D] font-medium text-[16px] md:text-[24px]">+998(75) 556-56-56 +998(75) 556-56-56</p>
                                 </div>
                                 <div className="bg-white  w-[345px] md:w-[655px] h-[73px] rounded-[24px] flex justify-start items-center gap-[20px] px-4">
                                     <img src="/icn/email.png" className="w-[32px]" />
-                                    <p className="text-[#8D8D8D] font-semibold text-[16px] md:text-[26px]">contact@techsolution.com</p>
+                                    <p className="text-[#8D8D8D] font-medium text-[16px] md:text-[24px]">contact@techsolution.com</p>
                                 </div>
                             </div>
                         </div>
@@ -398,36 +380,36 @@ function all() {
                         <form onSubmit={handleSubmit} className="w-[335px] md:w-[700px] h-[620px] bg-white rounded-[24px] p-[20px] md:p-[36px] shadow-2xl shadow-gray-200 space-y-3">
                             <div className="flex flex-col gap-3 md:flex-row">
                                 <div>
-                                    <label className="block text-xl mb-2" htmlFor="name">
+                                    <label className="block text-[16px] md:text-xl mb-2" htmlFor="name">
                                         {t("contactSection.form.nameLabel")}
                                     </label>
-                                    <input type="text" id="name" name="name" placeholder={t("contactSection.form.namePlaceholder")} required className="w-[303px] md:w-[311px] h-[48px] md:h-[45px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                    <input type="text" id="name" name="name" placeholder={t("contactSection.form.namePlaceholder")} required className="w-[303px] md:w-[311px] h-[48px] md:h-[45px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#579094] focus:border-transparent text-gray-500" />
                                 </div>
 
                                 <div>
-                                    <label className="block text-xl mb-2" htmlFor="email">
+                                    <label className="block text-[16px] md:text-xl mb-2" htmlFor="email">
                                         {t("contactSection.form.emailLabel")}
                                     </label>
-                                    <input type="email" id="email" name="email" placeholder="example@mail.com" required className="w-[303px] md:w-[311px] h-[48px] md:h-[45px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                    <input type="email" id="email" name="email" placeholder="example@mail.com" required className="w-[303px] md:w-[311px] h-[48px] md:h-[45px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#579094] focus:border-transparent text-gray-500" />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-xl mb-2" htmlFor="company">
+                                <label className="block text-[16px] md:text-xl mb-2" htmlFor="company">
                                     {t("contactSection.form.companyLabel")}
                                 </label>
-                                <input type="text" id="company" name="company" placeholder={t("contactSection.form.companyPlaceholder")} className="w-[303px] md:w-[638px] h-[48px] md:h-[45px]  px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" />
+                                <input type="text" id="company" name="company" placeholder={t("contactSection.form.companyPlaceholder")} className="w-[303px] md:w-[638px] h-[48px] md:h-[45px]  px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#579094] focus:border-transparent text-gray-500" />
                             </div>
 
                             <div>
-                                <label className="block text-xl mb-2" htmlFor="message">
+                                <label className="block text-[16px] md:text-xl mb-2" htmlFor="message">
                                     {t("contactSection.form.messageLabel")}
                                 </label>
-                                <textarea id="message" name="message" placeholder={t("contactSection.form.messagePlaceholder")} rows="4" required className="w-[303px] md:w-[638px] h-[200px] md:h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" ></textarea>
+                                <textarea id="message" name="message" placeholder={t("contactSection.form.messagePlaceholder")} rows="4" required className="w-[303px] md:w-[638px] h-[150px] md:h-[200px] px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#579094] focus:border-transparent text-gray-500" ></textarea>
                             </div>
 
-                            <div className="w-full">
-                                <label className="flex items-center gap-3 border border-gray-300 p-2 rounded-lg cursor-pointer text-gray-700">
+                            <div className="w-[303px] md:w-[638px]">
+                                <label className="flex items-center gap-3 border border-gray-300 p-2 rounded-lg cursor-pointer text-gray-500">
                                     <img src="/icn/upload.png" alt="logo" className="w-6 h-6" />
                                     <span className="truncate"> {fileName || "Выбрать файл"} </span>
                                     <input type="file" className="hidden" onChange={handleFileChange} />
@@ -435,7 +417,7 @@ function all() {
                             </div>
 
 
-                            <button type="submit" className="w-[303px] md:w-[638px] h-[52px] bg-[#579094] border-2 border-[#579094] hover:text-[#579094] text-white py-2 px-4 rounded-full hover:bg-white transition-colors" >
+                            <button type="submit" className="w-[303px] md:w-[638px] h-[45px] md:h-[52px] bg-[#579094] border-2 border-[#579094] hover:text-[#579094] text-white py-2 px-4 rounded-full hover:bg-white transition-colors" >
                                 {t("contactSection.submit")}
                             </button>
                         </form>
