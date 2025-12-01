@@ -135,7 +135,7 @@ function all() {
                         <button className="hover:border-2 hover:border-[#FAD28C] bg-[#FAD28C] hover:bg-white hover:text-[#FAD28C] text-black w-[147px] h-[52px] rounded-full text-[20px]">
                             {t("hero.cta")}
                         </button>
-                        {/* <div className="border-t border-[#FAD28C]/15 w-[335px] md:w-[600px] xl:w-[700px]"></div> */}
+                        <div className="border-t border-[#FAD28C]/15 w-[335px] md:w-[600px] xl:w-[700px]"></div>
 
                         <div className="flex w-[350px] md:w-[400px] gap-[36px] text-[#FAD28C]">
                             <div className="space-y-[4px] md:space-y-[16px] flex flex-col justify-center items-center">
@@ -455,7 +455,7 @@ function all() {
                         <Certificates />
                     </div>
                 </section>
-
+                            
             </main>
         </div>
     );
